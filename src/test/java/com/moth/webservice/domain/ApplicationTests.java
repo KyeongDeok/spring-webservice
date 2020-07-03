@@ -1,10 +1,10 @@
-package com.moth.springwebservice;
+package com.moth.webservice.domain;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringWebserviceApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {

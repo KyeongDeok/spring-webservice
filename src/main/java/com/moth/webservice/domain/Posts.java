@@ -1,4 +1,4 @@
-package com.moth.webservice.dao;
+package com.moth.webservice.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,6 +29,8 @@ public class Posts {
 	
 	@Builder
 	public Posts(String title, String content, String author) {
-		
+		this.title = title;
+        this.content = content;
+        this.author = author;
 	}
 }

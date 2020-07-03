@@ -1,4 +1,4 @@
-package com.moth.webservice.dao;
+package com.moth.webservice.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
