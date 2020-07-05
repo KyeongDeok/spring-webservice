@@ -24,6 +24,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compile 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.0'
 	
+	//webjar 사용
+	compileOnly 'org.webjars:jquery:2.2.1'
+  	compileOnly 'org.webjars:jquery-ui:1.11.4'
+  	compileOnly 'org.webjars:bootstrap:3.3.6'
+  
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
