@@ -51,13 +51,13 @@ $(function(){
         }
         
         $.ajax({
-            url: '/api/login',
+            url: '/user/signup',
             type: 'POST',
             data: {
                 name:$("#inputName").val(),
-                userID:$('#InputEmail').val(),
-                email:$('#InputEmail').val(),
-                password:$('#inputPassword').val(),
+                userID:$('#email').val(),
+                email:$('#email').val(),
+                password:$('#password').val(),
                 telNO:$("#inputtelNO").val(),
                 mobileNO:$("#inputMobile").val()
             },
@@ -65,7 +65,7 @@ $(function(){
             success: function (response) {
                 if(response.result == 1){
                     alert('가입 완료');
-                    location.replace('/'); // 화면 갱신
+//                    location.replace('/'); // 화면 갱신
                 } else if(response.result == 0){
                     alert('이미 가입된 아이디입니다');
                 } else if(response.result == -2){

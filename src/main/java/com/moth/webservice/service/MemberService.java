@@ -13,12 +13,17 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import com.moth.webservice.config.Role;
 import com.moth.webservice.domain.MemberDto;
 import com.moth.webservice.domain.MemberEntity;
 import com.moth.webservice.domain.MemberRepository;
 
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
 public class MemberService implements UserDetailsService {
 	
 	private MemberRepository memberRepository;
