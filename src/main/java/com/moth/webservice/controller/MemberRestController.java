@@ -19,13 +19,13 @@ public class MemberRestController {
 
 	//회원가입 처리
 	@PostMapping("/user/signup")
-	public Long signup(@RequestBody MemberRequestDto memberDto) {
+	public Long signup(@RequestBody MemberRequestDto dto) {
 		
 	    // 가입이 안되어 있다면 회원가입 시작.
-	    if (memberRepository.findByEmail(memberDto.getEmail()).isPresent()){
+	    if (memberService.isAlreadyJoin(dto)){
 	    	return null;
 	    }else {
-	    	return memberService.joinUser(memberDto);
+	    	return memberService.joinUser(dto);
 	    }
 	}
 }

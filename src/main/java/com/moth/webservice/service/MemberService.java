@@ -28,6 +28,10 @@ public class MemberService implements UserDetailsService {
 	
 	private MemberRepository memberRepository;
 	
+	public boolean isAlreadyJoin(MemberRequestDto dto) {
+		 return memberRepository.findByEmail(dto.getEmail()).isPresent();
+	}
+	
 	@Transactional
 	public Long joinUser(MemberRequestDto dto) {
 		
