@@ -30,7 +30,7 @@ dependencies {
 	//webjar 사용
 	compileOnly 'org.webjars:jquery:2.2.1'
   	compileOnly 'org.webjars:jquery-ui:1.11.4'
-  	compileOnly 'org.webjars:bootstrap:3.3.6'
+  	compileOnly 'org.webjars:bootstrap:4.1.1'
   	compileOnly 'org.webjars:font-awesome:5.13.0'
   
 	compileOnly 'org.projectlombok:lombok'

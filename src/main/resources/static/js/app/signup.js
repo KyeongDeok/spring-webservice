@@ -62,11 +62,11 @@ $(function(){
             data: JSON.stringify(data),
 //            dataType: "json",
             success: function (response) {
-                if(response.result != null){
+                if(response.result){
+                	alert('이미 가입된 아이디입니다.');
+                } else{
                 	alert('가입 완료');
                 	location.href = "/";
-                } else{
-                	alert('이미 가입된 아이디입니다.');
                 }
             },
             error: function(jqXHR, textStatus, errorThrown){
