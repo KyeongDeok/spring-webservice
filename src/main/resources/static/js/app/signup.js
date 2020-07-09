@@ -62,16 +62,11 @@ $(function(){
             data: JSON.stringify(data),
 //            dataType: "json",
             success: function (response) {
-                if(response.result == 1){
-                    alert('가입 완료');
-//                    location.replace('/'); // 화면 갱신
-                } else if(response.result == 0){
-                    alert('이미 가입된 아이디입니다');
-                } else if(response.result == -2){
-                    alert('입력된 값이 없습니다');
-                } else {
-                	console.log(response.result);
-                    alert('등록중에 에러가 발생했습니다');
+                if(response.result != null){
+                	alert('가입 완료');
+                	location.href = "/";
+                } else{
+                	alert('이미 가입된 아이디입니다.');
                 }
             },
             error: function(jqXHR, textStatus, errorThrown){

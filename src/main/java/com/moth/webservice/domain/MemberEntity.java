@@ -15,14 +15,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-@Table(name = "member")
+@Table(	name="member")
 public class MemberEntity extends BaseTimeEntity {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(length = 100, nullable = false)
+	@Column(length = 100, nullable = false, unique=true)
 	private String email;
 	
 	@Column(length = 100, nullable = false)
