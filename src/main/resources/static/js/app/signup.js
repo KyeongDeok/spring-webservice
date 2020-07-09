@@ -38,12 +38,6 @@ $(function(){
             alert('비밀번호를 둘다 동일하게 입력하세요');
             return false;
         }
-
-        if($("#inputMobile").val() ==''){
-            alert('휴대폰 번호를 입력하세요');
-            $("#inputMobile").focus();
-            return false;
-        }
         
         if($("#agree").is(":checked") == false){
             alert('약관에 동의하셔야 합니다');
@@ -54,12 +48,8 @@ $(function(){
             url: '/user/signup',
             type: 'POST',
             data: {
-                name:$("#inputName").val(),
-                userID:$('#email').val(),
                 email:$('#email').val(),
                 password:$('#password').val(),
-                telNO:$("#inputtelNO").val(),
-                mobileNO:$("#inputMobile").val()
             },
             dataType: "json",
             success: function (response) {

@@ -16,7 +16,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.moth.webservice.config.Role;
-import com.moth.webservice.domain.MemberDto;
+import com.moth.webservice.domain.MemberRequestDto;
 import com.moth.webservice.domain.MemberEntity;
 import com.moth.webservice.domain.MemberRepository;
 
@@ -29,7 +29,7 @@ public class MemberService implements UserDetailsService {
 	private MemberRepository memberRepository;
 	
 	@Transactional
-	public Long joinUser(MemberDto dto) {
+	public Long joinUser(MemberRequestDto dto) {
 		
 		//비밀번호 암호화
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();

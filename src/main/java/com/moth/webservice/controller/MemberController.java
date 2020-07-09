@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.moth.webservice.domain.MemberDto;
+import com.moth.webservice.domain.MemberRequestDto;
 import com.moth.webservice.service.MemberService;
 
 import lombok.AllArgsConstructor;
@@ -22,7 +22,7 @@ public class MemberController {
 	
 	//회원가입 처리
 	@PostMapping("/user/signup")
-	public String signup(MemberDto memberDto) {
+	public String signup(MemberRequestDto memberDto) {
 		memberService.joinUser(memberDto);
 		
 		return "redirect:/user/login";
@@ -47,7 +47,7 @@ public class MemberController {
 	}
 	
 	//내 정보 페이지
-	@GetMapping("/user/info")
+	@GetMapping("/user/myinfo")
 	public String myinfo() {
 		return "myinfo";
 	}
