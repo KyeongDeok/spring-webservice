@@ -3,6 +3,7 @@ package com.moth.webservice.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.moth.webservice.domain.MemberRequestDto;
 import com.moth.webservice.service.MemberService;
@@ -22,10 +23,10 @@ public class MemberController {
 	
 	//회원가입 처리
 	@PostMapping("/user/signup")
-	public String signup(MemberRequestDto memberDto) {
+	public String signup(@RequestBody MemberRequestDto memberDto) {
 		memberService.joinUser(memberDto);
 		
-		return "redirect:/user/login";
+		return "main";
 	}
 	
 	//로그인 페이지

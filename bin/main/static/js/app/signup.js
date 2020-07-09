@@ -1,40 +1,46 @@
 $(function(){
     // 회원 가입 처리
+
+	
     $('#join-submit').click(function(e){
         e.preventDefault();
-        if($("#inputName").val() ==''){
-            alert('이름을 입력하세요');
-            $("#inputName").focus();
-            return false;
-        }
-
-        var email = $('#InputEmail').val();
+        
+//    	var token = $("meta[name='_csrf']").attr("content");
+//    	var header  = $("meta[name = '_csrf_header']").attr("content");
+//    	$.ajaxSetup({
+//            beforeSend: function(xhr) {
+//                xhr.setRequestHeader(, token);
+//            }
+//        });
+        
+        var email = $('#email').val();
+        
         if(email == ''){
             alert('이메일을 입력하세요');
-            $("#InputEmail").focus();
+            $("#email").focus();
             return false;
         } else {
             var emailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
             if (!emailRegex.test(email)) {
-                alert('이메일 주소가 유효하지 않습니다. ex)abc@gmail.com');
-                $("#inputEmail").focus();
+            	alert('이메일 양식에 맞게 입력해주세요. ex) abc@gmail.com');
+                $("#email").focus();
                 return false;
             }
         }
 
-        if($("#inputPassword").val() ==''){
+        if($("#password").val() ==''){
             alert('비밀번호를 입력하세요');
-            $("#inputPassword").focus();
+            $("#password").focus();
             return false;
         }
 
-        if($("#inputPasswordCheck").val() ==''){
+        if($("#passworkCheck").val() ==''){
             alert('비밀번호를 다시 한번 더 입력하세요');
-            $("#inputPasswordCheck").focus();
+            $("#passworkCheck").focus();
             return false;
         }
         
-        if($("#inputPassword").val()!== $("#inputPasswordCheck").val()){
+        if($("#password").val()!== $("#passwordCheck").val()){
             alert('비밀번호를 둘다 동일하게 입력하세요');
             return false;
         }
@@ -44,14 +50,17 @@ $(function(){
             return false;      
         }
         
+        var data = {
+    		email : $('#email').val(),
+        	password : $('#password').val()
+        }
+        
         $.ajax({
             url: '/user/signup',
             type: 'POST',
-            data: {
-                email:$('#email').val(),
-                password:$('#password').val(),
-            },
-            dataType: "json",
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data),
+//            dataType: "json",
             success: function (response) {
                 if(response.result == 1){
                     alert('가입 완료');
@@ -61,6 +70,7 @@ $(function(){
                 } else if(response.result == -2){
                     alert('입력된 값이 없습니다');
                 } else {
+                	console.log(response.result);
                     alert('등록중에 에러가 발생했습니다');
                 }
             },

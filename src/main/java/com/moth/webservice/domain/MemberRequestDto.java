@@ -11,11 +11,9 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 public class MemberRequestDto {
-	private Long id;
+
 	private String email;
 	private String password;
-	private String createdDate;
-	private String modifiedDate;
 	
 	public MemberEntity toEntity() {
 		return MemberEntity.builder()
