@@ -62,7 +62,7 @@ $(function(){
             data: JSON.stringify(data),
 //            dataType: "json",
             success: function (response) {
-                if(response.result){
+                if(response){
                 	alert('이미 가입된 아이디입니다.');
                 } else{
                 	alert('가입 완료');

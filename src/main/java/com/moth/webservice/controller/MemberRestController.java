@@ -20,6 +20,11 @@ public class MemberRestController {
 	public boolean signup(@RequestBody MemberRequestDto dto) {
 		
 	    // 가입이 안되어 있다면 회원가입 시작.
-		return memberService.isAlreadyJoin(dto);
+		if(memberService.isAlreadyJoin(dto)) {
+			return true;
+		}
+		
+		memberService.joinUser(dto);
+		return false;
 	}
 }
