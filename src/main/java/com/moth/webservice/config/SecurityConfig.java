@@ -32,34 +32,32 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/css/**","/js/**","/img/**","/lib/**");
+		web.ignoring().antMatchers("/favicon.ico","/css/**","/js/**","/img/**","/lib/**", "/webjars/**");
 	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable();
-		
-		http.authorizeRequests()
+		http.csrf().disable()
+		.authorizeRequests()
 			.antMatchers("/admin/**").hasRole("ADMIN")
 			.antMatchers("/user/myinfo").hasRole("MEMBER")
 			.antMatchers("/**").permitAll()
 		.and()
+			.csrf()
+				.disable()
 			.formLogin()
 			.loginPage("/user/login")
 			.defaultSuccessUrl("/user/login/result")
 			.usernameParameter("email")
 			.permitAll()
 		.and()
-			.csrf()
-				.ignoringAntMatchers("/**")
-		.and()
-        .headers()
-            .addHeaderWriter(
-                new XFrameOptionsHeaderWriter(
-                    new WhiteListedAllowFromStrategy(Arrays.asList("localhost"))    // 여기!
-                )
-            )
-            .frameOptions().sameOrigin()
+	        .headers()
+	            .addHeaderWriter(
+	                new XFrameOptionsHeaderWriter(
+	                    new WhiteListedAllowFromStrategy(Arrays.asList("localhost"))    // 여기!
+	                )
+	            )
+	            .frameOptions().sameOrigin()
 		.and()
 			.logout()
 			.logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
