@@ -1,9 +1,11 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>스프링부트 웹서비스</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="_csrf" th:content="${_csrf.token}"/>
+	<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 
     <!--부트스트랩 css 추가-->
     <link rel='stylesheet' href='/webjars/bootstrap/4.1.1/css/bootstrap.min.css'>
@@ -25,17 +27,15 @@
                     <th>최종수정일</th>
                 </tr>
             </thead>
-            <tbody id="tbody">
-            {{#each posts}}
-                <tr>
-                    <td>{{id}}</td>
-                    <td>{{title}}</td>
-                    <td>{{author}}</td>
-                    <td>{{content}}</td>
-                    <td>{{modifiedDate}}</td>
-                </tr>
-            {{/each}}
-            </tbody>
+       		<tbody id="tbody">
+	            <tr th:each="post : ${posts}">
+					<td th:text="${post.id">id</td>
+					<td th:text="${post.title}">title</td>
+					<td th:text="${post.author}">author</td>
+					<td th:text="${post.content}">content</td>
+					<td th:text="${post.modifiedDate}">modifiedDate</td>
+				</tr>
+			</tbody>
         </table>
     </div>
 

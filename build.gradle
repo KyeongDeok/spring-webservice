@@ -24,8 +24,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
-	
-	compile 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.0'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.1.9.RELEASE'
 	
 	//webjar 사용
 	compileOnly 'org.webjars:jquery:2.2.1'
@@ -39,6 +38,7 @@ dependencies {
 	
 	//J-UNIT4 사용
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	testImplementation('org.springframework.security:spring-security-test')
 }
 
 ext['hibernate.version'] = '5.2.11.Final' //추가
