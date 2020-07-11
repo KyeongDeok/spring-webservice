@@ -18,4 +18,5 @@
 ~ hibernate
 ~ springboot2
 ~ lombok
+~ thymeleaf
 ```
