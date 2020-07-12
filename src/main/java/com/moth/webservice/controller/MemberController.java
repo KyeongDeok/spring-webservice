@@ -30,7 +30,7 @@ public class MemberController {
 	//로그아웃 결과 페이지
 	@GetMapping("user/logout/result")
 	public String denied() {
-		return "denied";
+		return "logout";
 	}
 	
 	//내 정보 페이지

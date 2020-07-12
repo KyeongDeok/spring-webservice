@@ -1,9 +1,4 @@
 var main = {
-	_csrf_init : function(xhr){
-		var token = $("meta[name='_csrf']").attr("content");
-		var header = $("meta[name='_csrf_header']").attr("content");
-		xhr.setRequestHeader(header, token);
-	},
     init : function () {
         var _this = this;
         $('#btn-save').on('click', function () {
@@ -11,6 +6,9 @@ var main = {
         });
     },
     save : function () {
+		var token = $("meta[name='_csrf']").attr("content");
+		var header = $("meta[name='_csrf_header']").attr("content");
+		 
         var data = {
             title: $('#title').val(),
             author: $('#author').val(),
@@ -23,7 +21,9 @@ var main = {
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data),
-            beforeSend: _csrf_init()
+            beforeSend: function(xhr){
+    			xhr.setRequestHeader(header, token);
+    		}
         }).done(function() {
             alert('글이 등록되었습니다.');
             location.reload();
