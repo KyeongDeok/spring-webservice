@@ -1,4 +1,4 @@
-package com.moth.webservice.config;
+package com.moth.webservice.config.security;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

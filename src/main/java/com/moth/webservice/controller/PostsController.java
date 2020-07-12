@@ -10,7 +10,7 @@ import lombok.AllArgsConstructor;
 
 @Controller
 @AllArgsConstructor
-public class WebController {
+public class PostsController {
 	
 	private PostsService postsService;
 	

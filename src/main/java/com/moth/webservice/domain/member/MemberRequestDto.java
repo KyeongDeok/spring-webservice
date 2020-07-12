@@ -1,4 +1,4 @@
-package com.moth.webservice.domain;
+package com.moth.webservice.domain.member;
 
 import lombok.Builder;
 import lombok.Getter;

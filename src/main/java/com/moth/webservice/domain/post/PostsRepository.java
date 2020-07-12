@@ -1,14 +1,14 @@
-package com.moth.webservice.domain;
+package com.moth.webservice.domain.post;
 
 import java.util.stream.Stream;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-public interface PostsRepository extends JpaRepository<Posts,Long>{
+public interface PostsRepository extends JpaRepository<PostsEntity,Long>{
 	
 	@Query("SELECT p "+
-					"FROM Posts p "+
+					"FROM PostsEntity p "+
 						"ORDER BY p.id DESC")
-	Stream<Posts>fineAllDesc();
+	Stream<PostsEntity>fineAllDesc();
 }

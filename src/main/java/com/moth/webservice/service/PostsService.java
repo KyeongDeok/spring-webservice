@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.moth.webservice.domain.PostsMainResponseDto;
-import com.moth.webservice.domain.PostsRepository;
-import com.moth.webservice.domain.PostsSaveRequestDto;
+import com.moth.webservice.domain.post.PostsMainResponseDto;
+import com.moth.webservice.domain.post.PostsRepository;
+import com.moth.webservice.domain.post.PostsSaveRequestDto;
 
 import lombok.AllArgsConstructor;
 

@@ -3,11 +3,15 @@ package com.moth.webservice.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.moth.webservice.service.MemberService;
+
 import lombok.AllArgsConstructor;
 
 @Controller
 @AllArgsConstructor
 public class MemberController {
+	
+	public MemberService memberService;
 	
 	//회원가입 페이지
 	@GetMapping("/user/signup")

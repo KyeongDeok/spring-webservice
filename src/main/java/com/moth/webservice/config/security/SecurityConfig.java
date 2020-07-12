@@ -1,4 +1,4 @@
-package com.moth.webservice.config;
+package com.moth.webservice.config.security;
 
 import java.util.Arrays;
 
@@ -46,8 +46,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.and()
 			.formLogin()
 			.loginPage("/user/login")
-			.defaultSuccessUrl("/")
 			.usernameParameter("email")
+			.successHandler(new LoginSuccessHandler())
 			.permitAll()
 		.and()
 	        .headers()

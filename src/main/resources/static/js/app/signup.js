@@ -61,16 +61,16 @@ var signup = {
 		            type: 'POST',
 		            contentType: 'application/json; charset=utf-8',
 		            data: JSON.stringify(data),
-//		            dataType: "json",
+		            dataType: "json",
 		            beforeSend: function(xhr){
 		    			xhr.setRequestHeader(header, token);
 		    		},
 		    		success : function(response) {
-				    			if(response){
+				    			if(response == 0){
 				                	alert('이미 가입된 아이디입니다.');
 				                }else {
 				                	alert('가입 완료');
-				                	location.reload();
+				                	location.href = "/user/login";
 				                }
 				        },
 			        error : function (error) {

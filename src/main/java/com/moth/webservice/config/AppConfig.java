@@ -8,6 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
+import com.moth.webservice.config.security.SecurityConfig;
+
 @Configuration
 @ComponentScan("com.moth.webservice")
 @Import(SecurityConfig.class)

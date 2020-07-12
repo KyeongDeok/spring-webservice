@@ -12,9 +12,17 @@
     <link rel='stylesheet' href='/webjars/bootstrap/4.1.1/css/bootstrap.min.css'>
 </head>
 <body>
-    <h1>스프링부트로 시작하는 웹 서비스</h1>
-	<div class="col-md-12">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal" sec:authorize="isAuthenticated()">글 등록</button>
+	<div class="container">
+		<div class="col-md-12">
+
+    		<h3>스프링부트로 시작하는 웹 서비스 ( Login: <span th:text="${session.user}"></span> )</h3>
+    	
+		    <a sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
+		    <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+		    <a sec:authorize="isAnonymous()" th:href="@{/user/signup}">회원가입</a>
+		    <a sec:authorize="hasRole('ROLE_MEMBER')" th:href="@{/user/myinfo}">내정보</a>
+		    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">어드민</a>
+	    
         <br/>
         <br/>
         <!-- 목록 출력 영역 -->
@@ -72,12 +80,8 @@
             </div>
         </div>
     </div>
-    
-    <a sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
-    <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
-    <a sec:authorize="isAnonymous()" th:href="@{/user/signup}">회원가입</a>
-    <a sec:authorize="hasRole('ROLE_MEMBER')" th:href="@{/user/info}">내정보</a>
-    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">어드민</a>
+        	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal" sec:authorize="isAuthenticated()">글 등록</button>
+	</div>
 	
     <!--부트스트랩 js, jquery 추가-->
     <script src="/webjars/jquery/2.2.1/jquery.min.js"></script> 

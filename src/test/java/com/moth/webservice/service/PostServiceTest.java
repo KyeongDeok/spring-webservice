@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.moth.webservice.domain.Posts;
-import com.moth.webservice.domain.PostsRepository;
-import com.moth.webservice.domain.PostsSaveRequestDto;
+import com.moth.webservice.domain.post.PostsEntity;
+import com.moth.webservice.domain.post.PostsRepository;
+import com.moth.webservice.domain.post.PostsSaveRequestDto;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -38,7 +38,7 @@ public class PostServiceTest {
 		postsRepository.save(dto.toEntity());
 		
 		//then
-		Posts posts = postsRepository.findAll().get(0);
+		PostsEntity posts = postsRepository.findAll().get(0);
 		assertThat(posts.getAuthor()).isEqualTo("moth@gmail.com");
 		assertThat(posts.getContent()).isEqualTo("test content");
 		assertThat(posts.getTitle()).isEqualTo("test title");

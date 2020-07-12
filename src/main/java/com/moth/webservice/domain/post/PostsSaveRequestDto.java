@@ -1,4 +1,4 @@
-package com.moth.webservice.domain;
+package com.moth.webservice.domain.post;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -22,7 +22,7 @@ public class PostsSaveRequestDto {
 		this.author = author;
 	}
 	
-	public Posts toEntity() {
-		return Posts.builder().title(this.title).content(this.content).author(this.author).build();
+	public PostsEntity toEntity() {
+		return PostsEntity.builder().title(this.title).content(this.content).author(this.author).build();
 	}
 }

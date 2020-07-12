@@ -1,10 +1,13 @@
-package com.moth.webservice.domain;
+package com.moth.webservice.domain.post;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.moth.webservice.domain.BaseTimeEntity;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -14,7 +17,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class Posts extends BaseTimeEntity {
+@Table(	name="posts")
+public class PostsEntity extends BaseTimeEntity {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -29,7 +33,7 @@ public class Posts extends BaseTimeEntity {
 	private String author;
 	
 	@Builder
-	public Posts(String title, String content, String author) {
+	public PostsEntity(String title, String content, String author) {
 		this.title = title;
         this.content = content;
         this.author = author;

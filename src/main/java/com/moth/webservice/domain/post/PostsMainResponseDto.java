@@ -1,4 +1,4 @@
-package com.moth.webservice.domain;
+package com.moth.webservice.domain.post;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -15,7 +15,7 @@ public class PostsMainResponseDto {
 	private String author;
 	private String modifiedDate;
 	
-	public PostsMainResponseDto(Posts entity) {
+	public PostsMainResponseDto(PostsEntity entity) {
 		this.id = entity.getId();
 		this.title = entity.getTitle();
 		this.content = entity.getContent();

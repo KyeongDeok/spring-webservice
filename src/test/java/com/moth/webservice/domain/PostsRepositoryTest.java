@@ -14,6 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.moth.webservice.domain.post.PostsEntity;
+import com.moth.webservice.domain.post.PostsRepository;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class PostsRepositoryTest {
@@ -28,11 +31,11 @@ public class PostsRepositoryTest {
 	
 	@Test
 	public void 게시글저장_불러오기() {
-		postsRepository.save(Posts.builder().author("moth@gmail.com").title("test title").content("test contents").build());
+		postsRepository.save(PostsEntity.builder().author("moth@gmail.com").title("test title").content("test contents").build());
 		
-		List<Posts> postsList = postsRepository.findAll();
+		List<PostsEntity> postsList = postsRepository.findAll();
 		
-		Posts posts = postsList.get(0);
+		PostsEntity posts = postsList.get(0);
 		
 		assertThat(posts.getTitle(), is("test title"));
         assertThat(posts.getContent(), is("test contents"));
@@ -41,11 +44,11 @@ public class PostsRepositoryTest {
 	@Test
 	public void BaseTimeEntity_등록() {
 		LocalDateTime now = LocalDateTime.now();
-		postsRepository.save(Posts.builder().title("test title").author("moth@gmail.com").content("test content").build());
+		postsRepository.save(PostsEntity.builder().title("test title").author("moth@gmail.com").content("test content").build());
 		
-		List <Posts> postsList = postsRepository.findAll();
+		List <PostsEntity> postsList = postsRepository.findAll();
 		
-		Posts posts = postsList.get(0);
+		PostsEntity posts = postsList.get(0);
 		
 		assertTrue(posts.getCreatedDate().isAfter(now));
 		assertTrue(posts.getModifiedDate().isAfter(now));
