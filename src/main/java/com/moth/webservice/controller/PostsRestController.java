@@ -1,5 +1,8 @@
 package com.moth.webservice.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +25,12 @@ public class PostsRestController {
     }
     
     @PostMapping("/api/posts")
-    public Long savePosts(@RequestBody PostsSaveRequestDto dto) {
+    public Long savePosts(@RequestBody PostsSaveRequestDto dto, HttpServletRequest request) {
+    	
+    	HttpSession session = request.getSession();
+    	String author = (String) session.getAttribute("user");
+    	
+    	dto.setAuthor(author);
     	return postsService.save(dto);
     }
 }
