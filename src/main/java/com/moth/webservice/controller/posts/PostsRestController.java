@@ -36,6 +36,7 @@ public class PostsRestController {
     	String author = (String) session.getAttribute("user");
     	
     	dto.setAuthor(author);
+    	
 		return postsService.update(postId, dto);
 	}
 }

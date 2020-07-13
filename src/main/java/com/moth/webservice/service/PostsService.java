@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.moth.webservice.domain.post.PostsEntity;
 import com.moth.webservice.domain.post.PostsMainResponseDto;
 import com.moth.webservice.domain.post.PostsRepository;
 import com.moth.webservice.domain.post.PostsSaveRequestDto;
@@ -37,9 +36,12 @@ public class PostsService {
 	
 	@Transactional
 	public Long update (Long postId, PostsSaveRequestDto dto) {
-		PostsEntity entity =  postsRepository.findById(postId).get();
-		entity.updatePostsEntity(dto);
 		
-		return postsRepository.save(entity).getId();
+		postsRepository.findById(postId).ifPresent((entity ->{
+			entity.updatePostsEntity(dto);
+			postsRepository.save(entity);
+		}));
+		
+		return postId;
 	}
 }
