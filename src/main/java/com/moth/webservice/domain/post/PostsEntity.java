@@ -32,6 +32,11 @@ public class PostsEntity extends BaseTimeEntity {
 	
 	private String author;
 	
+	public void updatePostsEntity(PostsSaveRequestDto dto) {
+		this.title = dto.getTitle();
+		this.content = dto.getContent();
+	}
+	
 	@Builder
 	public PostsEntity(String title, String content, String author) {
 		this.title = title;

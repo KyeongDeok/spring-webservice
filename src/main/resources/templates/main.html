@@ -14,15 +14,19 @@
 <body>
 	<div class="container">
 		<div class="col-md-12">
-
-    		<h3>스프링부트로 시작하는 웹 서비스 ( Login: <span th:text="${session.user}"></span> )</h3>
+			
+		<div class="page-header">
+				<h1>스프링부트로 시작하는 웹 서비스 <small th:text="${session.user}">Subtext for header</small></h1>
+		</div>
     	
-		    <a sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
-		    <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
-		    <a sec:authorize="isAnonymous()" th:href="@{/user/signup}">회원가입</a>
-		    <a sec:authorize="hasRole('ROLE_MEMBER')" th:href="@{/user/myinfo}">내정보</a>
-		    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">어드민</a>
-	    
+    	<ol class="breadcrumb">
+		  <li><a href="#">Home</a></li>
+		  <li><a sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a></li>
+		  <li><a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a></li>
+		  <li><a sec:authorize="isAnonymous()" th:href="@{/user/signup}">회원가입</a></li>
+		  <li><a sec:authorize="hasRole('ROLE_MEMBER')" th:href="@{/user/myinfo}">내정보</a></li>
+		  <li><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">어드민</a></li>
+		</ol>
         <br/>
         <br/>
         <!-- 목록 출력 영역 -->
@@ -39,7 +43,7 @@
        		<tbody id="tbody">
 	            <tr th:each="post : ${posts}">
 					<td th:text="${post.id}">id</td>
-					<td th:text="${post.title}">title</td>
+					 <td><a th:text="${post.title}" th:href="@{/api/posts/{postId}(postId = ${post.id})}">title</a></td>
 					<td th:text="${post.author}">author</td>
 					<td th:text="${post.content}">content</td>
 					<td th:text="${post.modifiedDate}">modifiedDate</td>

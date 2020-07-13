@@ -10,5 +10,5 @@ public interface PostsRepository extends JpaRepository<PostsEntity,Long>{
 	@Query("SELECT p "+
 					"FROM PostsEntity p "+
 						"ORDER BY p.id DESC")
-	Stream<PostsEntity>fineAllDesc();
+	Stream<PostsEntity>findAllDesc();
 }

@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.moth.webservice.domain.post.PostsEntity;
 import com.moth.webservice.domain.post.PostsMainResponseDto;
 import com.moth.webservice.domain.post.PostsRepository;
 import com.moth.webservice.domain.post.PostsSaveRequestDto;
@@ -24,7 +25,22 @@ public class PostsService {
 	}
 	
 	@Transactional(readOnly = true)
-	public List <PostsMainResponseDto> fineAllDesc(){
-		return postsRepository.fineAllDesc().map(PostsMainResponseDto::new).collect(Collectors.toList());
+	public List <PostsMainResponseDto> findAllDesc(){
+		return postsRepository.findAllDesc().map(PostsMainResponseDto::new).collect(Collectors.toList());
+	}
+	
+	//TODO:: Exception 만들자..!!
+	@Transactional(readOnly = true)
+	public PostsMainResponseDto findById(Long postId) {
+		System.out.println(postId);
+		return new PostsMainResponseDto(postsRepository.findById(postId).get());
+	}
+	
+	@Transactional
+	public Long update (Long postId, PostsSaveRequestDto dto) {
+		PostsEntity entity =  postsRepository.findById(postId).get();
+		entity.updatePostsEntity(dto);
+		
+		return postsRepository.save(entity).getId();
 	}
 }

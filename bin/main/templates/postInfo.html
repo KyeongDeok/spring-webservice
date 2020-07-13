@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>스프링부트 웹서비스</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="_csrf" th:content="${_csrf.token}"/>
+	<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+    <!--부트스트랩 css 추가-->
+    <link rel='stylesheet' href='/webjars/bootstrap/4.1.1/css/bootstrap.min.css'>
+</head>
+<body>
+        <div class="container">
+       		<h5>작성자 <span th:text="${post.author}"></span></h5>
+       		<h5>최종 수정일 <span th:text="${post.modifiedDate}"></span></h5>
+        </div>
+        
+		<div class="panel panel-default">
+		  <div class="panel-heading"><span th:text="${post.title}">Panel heading without title</span></div>
+		  <div class="panel-body">
+		  <span th:text="${post.content}"></span>
+		  </div>
+		</div>
+	
+    <!--부트스트랩 js, jquery 추가-->
+    <script src="/webjars/jquery/2.2.1/jquery.min.js"></script> 
+  	<script src="/webjars/bootstrap/4.1.1/js/bootstrap.min.js"></script> 
+	
+	<!--custom js 추가-->
+    <script src="/js/app/main.js"></script>
+</body>
+<footer>
+       	<a th:href="@{/api/posts/{postId}(postId = ${post.id})}">수정</a>
+       	<button type="button" class="btn btn-primary" id="delete-btn">삭제</button>
+	  	<a th:href="@{'/'}">메인으로 이동</a>
+</footer>
+</html>

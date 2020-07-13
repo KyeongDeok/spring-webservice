@@ -1,4 +1,4 @@
-package com.moth.webservice.controller;
+package com.moth.webservice.controller.guestbook;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
