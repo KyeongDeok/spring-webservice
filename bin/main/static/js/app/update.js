@@ -2,7 +2,7 @@ var update = {
     init : function () {
         var _this = this;
         $('#btn-update').on('click', function () {
-            _this.save();
+            _this.update();
         });
     },
     update : function () {
@@ -17,7 +17,7 @@ var update = {
 
         $.ajax({
             type: 'PUT',
-            url: '/api/posts',
+            url: '/api/posts/'+$('#pageId').val(),
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data),
@@ -26,7 +26,7 @@ var update = {
     		}
         }).done(function() {
             alert('글이 수정되었습니다.');
-            location.reload();
+            location.href = "/";
         }).fail(function (error) {
             alert(error);
         });

@@ -5,11 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.moth.webservice.domain.post.PostsSaveRequestDto;
 import com.moth.webservice.service.PostsService;
 
 import lombok.AllArgsConstructor;
@@ -28,16 +25,16 @@ public class PostsController {
 	
 	@GetMapping("/api/posts/{postId}")
 	public String showPost (@PathVariable Long postId, Model model) {
-		model.addAttribute("post", postsService.findById(postId));
 		
+		model.addAttribute("post", postsService.findById(postId));
 		return "postInfo";
 	}
 	
-	@PutMapping("/api/posts/{postId}")
-	public String updatePost(@PathVariable Long postId, @RequestBody PostsSaveRequestDto dto) {
+	@GetMapping("/api/updatePost/{postId}")
+	public String showUpdatePost(@PathVariable Long postId, Model model) {
 		
-		postsService.update(postId, dto);
-		return "main";
+		model.addAttribute("post", postsService.findById(postId));
+		return "updatePost";
 	}
 	
 	@DeleteMapping("/api/posts/{postId}")

@@ -32,7 +32,6 @@ public class PostsService {
 	//TODO:: Exception 만들자..!!
 	@Transactional(readOnly = true)
 	public PostsMainResponseDto findById(Long postId) {
-		System.out.println(postId);
 		return new PostsMainResponseDto(postsRepository.findById(postId).get());
 	}
 	
