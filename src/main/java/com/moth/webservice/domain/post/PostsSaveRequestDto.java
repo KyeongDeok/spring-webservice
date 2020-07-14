@@ -9,6 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class PostsSaveRequestDto {
+
 	private String title;
 	
 	private String content;
@@ -24,5 +25,10 @@ public class PostsSaveRequestDto {
 	
 	public PostsEntity toEntity() {
 		return PostsEntity.builder().title(this.title).content(this.content).author(this.author).build();
+	}
+	
+	@Override
+	public String toString() {
+		return "PostsSaveRequestDto [title=" + title + ", content=" + content + ", author=" + author + "]";
 	}
 }

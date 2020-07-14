@@ -29,11 +29,11 @@
   	<script src="/webjars/bootstrap/4.1.1/js/bootstrap.min.js"></script> 
 	
 	<!--custom js 추가-->
-    <script src="/js/app/main.js"></script>
+    <script src="/js/app/update.js"></script>
 </body>
 <footer>
        	<a th:href="@{/api/updatePost/{postId}(postId = ${post.id})}">수정</a>
-       	<button type="button" class="btn btn-primary" id="delete-btn">삭제</button>
+       	<button type="button" class="btn btn-primary" id="btn-delete">삭제</button>
 	  	<a th:href="@{'/'}">메인으로 이동</a>
 </footer>
 </html>
