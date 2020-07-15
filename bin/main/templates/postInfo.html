@@ -12,28 +12,27 @@
     <link rel='stylesheet' href='/webjars/bootstrap/4.1.1/css/bootstrap.min.css'>
 </head>
 <body>
-        <div class="container">
-       		<h5>작성자 <span th:text="${post.author}"></span></h5>
-       		<h5>최종 수정일 <span th:text="${post.modifiedDate}"></span></h5>
-        </div>
-        
-		<div class="panel panel-default">
-		  <div class="panel-heading"><span th:text="${post.title}">Panel heading without title</span></div>
-		  <div class="panel-body">
-		  <span th:text="${post.content}"></span>
-		  </div>
-		</div>
-	
+	<div class="container">
+		<h5>글번호: <span id="postId" th:text="${post.id}"></span></h5>
+		<h5>작성자: <span th:text="${post.author}"></span></h5>
+		<h5>최종 수정일: <span th:text="${post.modifiedDate}"></span></h5>
+	</div>
+      
+	<div class="panel panel-default">
+	  <div class="panel-heading"><span th:text="${post.title}">Panel heading without title</span></div>
+	  <div class="panel-body">
+	  <span th:text="${post.content}"></span>
+	  </div>
+	</div>
+	<a th:href="@{/api/updatePost/{postId}(postId = ${post.id})}">수정</a>
+      	<button type="button" class="btn btn-primary" id="btn-delete">삭제</button>
+  	<a th:href="@{'/'}">메인으로 이동</a>
+	  	
     <!--부트스트랩 js, jquery 추가-->
     <script src="/webjars/jquery/2.2.1/jquery.min.js"></script> 
   	<script src="/webjars/bootstrap/4.1.1/js/bootstrap.min.js"></script> 
 	
 	<!--custom js 추가-->
-    <script src="/js/app/update.js"></script>
+    <script src="/js/app/delete.js"></script>
 </body>
-<footer>
-       	<a th:href="@{/api/updatePost/{postId}(postId = ${post.id})}">수정</a>
-       	<button type="button" class="btn btn-primary" id="btn-delete">삭제</button>
-	  	<a th:href="@{'/'}">메인으로 이동</a>
-</footer>
 </html>
