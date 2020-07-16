@@ -8,26 +8,30 @@
 	<meta name="_csrf" th:content="${_csrf.token}"/>
 	<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 
-    <!--부트스트랩 css 추가-->
-    <link rel='stylesheet' href='/webjars/bootstrap/4.1.1/css/bootstrap.min.css'>
+    <!-- Bootstrap -->
+        <link href="/webjars/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- font awesome -->
+        <link href="/webjars/font-awesome/5.13.0/css/fontawesome.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
-		<h5>글번호: <span id="postId" th:text="${post.id}"></span></h5>
-		<h5>작성자: <span th:text="${post.author}"></span></h5>
-		<h5>최종 수정일: <span th:text="${post.modifiedDate}"></span></h5>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h5 class="panel-title">글번호: <span id="postId" th:text="${post.id}"></span></h5>
+				<h5 class="panel-title">작성자: <span th:text="${post.author}"></span></h5>
+				<h5 class="panel-title">최종 수정일: <span th:text="${post.modifiedDate}"></span></h5>
+				<span class="panel-title" th:text="${post.title}">Panel heading without title</span>
+			</div>
+			<div class="panel-body">
+				<span th:text="${post.content}"></span>
+			</div>
+		</div>
+		<a th:href="@{/api/updatePost/{postId}(postId = ${post.id})}">수정</a>
+	      	<button type="button" class="btn btn-primary" id="btn-delete">삭제</button>
+	  	<a th:href="@{'/'}">메인으로 이동</a>
 	</div>
-      
-	<div class="panel panel-default">
-	  <div class="panel-heading"><span th:text="${post.title}">Panel heading without title</span></div>
-	  <div class="panel-body">
-	  <span th:text="${post.content}"></span>
-	  </div>
-	</div>
-	<a th:href="@{/api/updatePost/{postId}(postId = ${post.id})}">수정</a>
-      	<button type="button" class="btn btn-primary" id="btn-delete">삭제</button>
-  	<a th:href="@{'/'}">메인으로 이동</a>
-	  	
+    
     <!--부트스트랩 js, jquery 추가-->
     <script src="/webjars/jquery/2.2.1/jquery.min.js"></script> 
   	<script src="/webjars/bootstrap/4.1.1/js/bootstrap.min.js"></script> 

@@ -2,15 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="_csrf" th:content="${_csrf.token}"/>
 		<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
-        
         <title>회원가입</title>
+        
         <!-- Bootstrap -->
         <link href="/webjars/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-        
         <!-- font awesome -->
         <link href="/webjars/font-awesome/5.13.0/css/fontawesome.css" rel="stylesheet">
         
@@ -36,7 +34,6 @@
                         <label for="passwordCheck">비밀번호 확인</label>
                         <input type="password" class="form-control" id="passwordCheck" placeholder="비밀번호 확인을 위해 다시한번 입력 해 주세요">
                     </div>
-                    
                     <div class="form-group">
 	                    <label>약관 동의</label>
 		                    <div data-toggle="buttons">
@@ -47,7 +44,6 @@
 		                    <a href="#">이용약관</a>에 동의합니다.
 		                    </div>
                     </div>
-
                     <div class="form-group text-center">
                         <button type="submit" id="join-submit" class="btn btn-primary">
                             회원가입<i class="fa fa-check spaceLeft"></i>
