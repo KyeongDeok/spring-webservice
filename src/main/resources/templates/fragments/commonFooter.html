@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="commonHeader">
+    <title>스프링부트 웹서비스</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="_csrf" th:content="${_csrf.token}"/>
+	<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+    <!-- Bootstrap -->
+    <link href="/webjars/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- font awesome -->
+    <link href="/webjars/font-awesome/5.13.0/css/fontawesome.css" rel="stylesheet">
+</head>
+</html>
