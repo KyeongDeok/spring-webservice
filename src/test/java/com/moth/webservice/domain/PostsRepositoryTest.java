@@ -14,8 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.moth.webservice.domain.post.PostsEntity;
-import com.moth.webservice.domain.post.PostsRepository;
+import com.moth.webservice.web.posts.model.PostsEntity;
+import com.moth.webservice.web.posts.model.PostsRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
