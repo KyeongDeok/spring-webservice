@@ -1,6 +1,6 @@
 [![HitCount](http://hits.dwyl.com/fmoths/spring-webservice.svg)](http://hits.dwyl.com/fmoths/webservice)
 
-# 기술블로그 공유 플랫폼
+# spring webservice
 
 ##### 개발중...
 
