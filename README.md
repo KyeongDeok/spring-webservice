@@ -16,8 +16,9 @@
 ~ java 8
 ~ gradle
 ~ hibernate
-~ springboot2
+~ spring boot2
 ~ lombok
 ~ jQuery -> 삭제 예정
 ~ thymeleaf -> vue.js로 변경 예정
+~ IDE : VScode
 ```
