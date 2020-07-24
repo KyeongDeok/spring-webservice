@@ -18,5 +18,6 @@
 ~ hibernate
 ~ springboot2
 ~ lombok
-~ thymeleaf
+~ jQuery -> 삭제 예정
+~ thymeleaf -> vue.js로 변경 예정
 ```
