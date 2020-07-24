@@ -1,8 +1,6 @@
 [![HitCount](http://hits.dwyl.com/fmoths/spring-webservice.svg)](http://hits.dwyl.com/fmoths/webservice)
 
-# spring-webservice
-
-스프링부트을 이용한 게시판 입니다.
+# 기술블로그 공유 플랫폼
 
 ##### 개발중...
 
