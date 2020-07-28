@@ -1,11 +1,6 @@
 package com.moth.webservice.web.member.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.moth.webservice.web.common.domain.BaseTimeEntity;
 
@@ -29,7 +24,11 @@ public class MemberEntity extends BaseTimeEntity {
 	
 	@Column(length = 100, nullable = false)
 	private String password;
-	
+
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private Role role;
+
 	@Builder
 	public MemberEntity(String email, String password) {
 		this.email = email;
