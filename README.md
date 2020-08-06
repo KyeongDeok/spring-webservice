@@ -20,5 +20,5 @@
 ~ lombok
 ~ jQuery -> 삭제 예정
 ~ thymeleaf -> vue.js로 변경 예정
-~ IDE : VScode
+~ IDE : Intellij
 ```
