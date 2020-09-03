@@ -1,3 +1,4 @@
 rootProject.name = 'spring-webservice'
-include 'him-front-web'
+include 'front_module'
+include 'admin-api'
 

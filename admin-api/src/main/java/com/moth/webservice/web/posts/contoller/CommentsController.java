@@ -19,7 +19,7 @@ public class CommentsController {
     public String updateComment(@PathVariable Long postId, @PathVariable Long commentsId,
                                 @RequestBody PostsSaveRequestDTO postsSaveRequestDto,
                                 @RequestBody CommentsRequestDTO commentsRequestDTO){
-        
+
         return "/";
     }
 }
