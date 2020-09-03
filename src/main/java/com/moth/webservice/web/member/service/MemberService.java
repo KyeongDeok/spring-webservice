@@ -16,9 +16,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.moth.webservice.config.auth.Role;
-import com.moth.webservice.web.member.model.MemberEntity;
-import com.moth.webservice.web.member.model.MemberRepository;
-import com.moth.webservice.web.member.model.MemberRequestDto;
+import com.moth.webservice.web.member.repository.MemberEntity;
+import com.moth.webservice.web.member.repository.MemberRepository;
+import com.moth.webservice.web.member.repository.MemberRequestDto;
 
 import lombok.AllArgsConstructor;
 

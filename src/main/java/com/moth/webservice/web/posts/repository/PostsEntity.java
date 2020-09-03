@@ -1,4 +1,4 @@
-package com.moth.webservice.web.posts.model;
+package com.moth.webservice.web.posts.repository;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

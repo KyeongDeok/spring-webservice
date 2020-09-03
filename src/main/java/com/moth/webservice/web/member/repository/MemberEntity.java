@@ -1,4 +1,4 @@
-package com.moth.webservice.web.member.model;
+package com.moth.webservice.web.member.repository;
 
 import javax.persistence.*;
 

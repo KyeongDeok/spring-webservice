@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.moth.webservice.web.posts.dto.PostsMainResponseDto;
 import com.moth.webservice.web.posts.dto.PostsSaveRequestDto;
-import com.moth.webservice.web.posts.model.PostsRepository;
+import com.moth.webservice.web.posts.repository.PostsRepository;
 
 import lombok.AllArgsConstructor;
 

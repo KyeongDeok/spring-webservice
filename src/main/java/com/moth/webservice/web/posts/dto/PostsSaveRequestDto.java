@@ -1,6 +1,6 @@
 package com.moth.webservice.web.posts.dto;
 
-import com.moth.webservice.web.posts.model.PostsEntity;
+import com.moth.webservice.web.posts.repository.PostsEntity;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -1,7 +1,6 @@
-package com.moth.webservice.web.member.model;
+package com.moth.webservice.web.member.repository;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
 @Getter
 public enum Role {

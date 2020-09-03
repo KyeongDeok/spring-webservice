@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
-import com.moth.webservice.web.posts.model.PostsEntity;
+import com.moth.webservice.web.posts.repository.PostsEntity;
 
 import lombok.Getter;
 
