@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 import com.moth.webservice.config.auth.Role;
 import com.moth.webservice.web.member.repository.MemberEntity;
 import com.moth.webservice.web.member.repository.MemberRepository;
-import com.moth.webservice.web.member.repository.MemberRequestDto;
+import com.moth.webservice.web.member.repository.MemberRequestDTO;
 
 import lombok.AllArgsConstructor;
 
@@ -28,12 +28,12 @@ public class MemberService implements UserDetailsService {
 	
 	private MemberRepository memberRepository;
 	
-	public boolean isAlreadyJoin(MemberRequestDto dto) {
+	public boolean isAlreadyJoin(MemberRequestDTO dto) {
 		 return memberRepository.findByEmail(dto.getEmail()).isPresent();
 	}
 	
 	@Transactional
-	public Long joinUser(MemberRequestDto dto) {
+	public Long joinUser(MemberRequestDTO dto) {
 		
 		//비밀번호 암호화
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();

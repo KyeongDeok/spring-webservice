@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 
-import com.moth.webservice.web.posts.dto.PostsSaveRequestDto;
+import com.moth.webservice.web.posts.dto.PostsSaveRequestDTO;
 import com.moth.webservice.web.posts.service.PostsService;
 
 import lombok.AllArgsConstructor;
@@ -38,7 +38,7 @@ public class PostsController {
 	}
     
 	@PutMapping("/api/posts/{postId}")
-	public String updatePost(PostsSaveRequestDto dto, @PathVariable Long postId) {
+	public String updatePost(PostsSaveRequestDTO dto, @PathVariable Long postId) {
 		
     	postsService.update(postId, dto);
 		return "redirect:/";

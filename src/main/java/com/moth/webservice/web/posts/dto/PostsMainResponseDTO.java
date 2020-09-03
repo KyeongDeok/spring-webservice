@@ -9,7 +9,7 @@ import com.moth.webservice.web.posts.repository.PostsEntity;
 import lombok.Getter;
 
 @Getter
-public class PostsMainResponseDto {
+public class PostsMainResponseDTO {
 	
 	private Long id;
 	private String title;
@@ -17,7 +17,7 @@ public class PostsMainResponseDto {
 	private String author;
 	private String modifiedDate;
 	
-	public PostsMainResponseDto(PostsEntity entity) {
+	public PostsMainResponseDTO(PostsEntity entity) {
 		this.id = entity.getId();
 		this.title = entity.getTitle();
 		this.content = entity.getContent();

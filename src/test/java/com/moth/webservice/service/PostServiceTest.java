@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.moth.webservice.web.posts.dto.PostsSaveRequestDto;
+import com.moth.webservice.web.posts.dto.PostsSaveRequestDTO;
 import com.moth.webservice.web.posts.repository.PostsEntity;
 import com.moth.webservice.web.posts.repository.PostsRepository;
 import com.moth.webservice.web.posts.service.PostsService;
@@ -32,7 +32,7 @@ public class PostServiceTest {
 	@Test
 	public void DTO데이터가_posts테이블에_저장된다() {
 		//given
-		PostsSaveRequestDto dto = PostsSaveRequestDto.builder().author("moth@gmail.com").content("test content")
+		PostsSaveRequestDTO dto = PostsSaveRequestDTO.builder().author("moth@gmail.com").content("test content")
 				.title("test title").build();
 		
 		//when

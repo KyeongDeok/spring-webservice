@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.moth.webservice.web.member.repository.MemberRequestDto;
+import com.moth.webservice.web.member.repository.MemberRequestDTO;
 import com.moth.webservice.web.member.service.MemberService;
 
 import lombok.AllArgsConstructor;
@@ -17,7 +17,7 @@ public class MemberRestController {
 
 	//회원가입 처리
 	@PostMapping("/user/signup")
-	public Long signup(@RequestBody MemberRequestDto dto) throws Exception {
+	public Long signup(@RequestBody MemberRequestDTO dto) throws Exception {
 		
 		long ret = 0;
 		

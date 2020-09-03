@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.moth.webservice.web.posts.dto.PostsSaveRequestDto;
+import com.moth.webservice.web.posts.dto.PostsSaveRequestDTO;
 import com.moth.webservice.web.posts.service.PostsService;
 
 import lombok.AllArgsConstructor;
@@ -21,7 +21,7 @@ public class PostsRestController {
 	private PostsService postsService;
 	
     @PostMapping("/api/posts")
-    public Long savePosts(@RequestBody PostsSaveRequestDto dto, HttpServletRequest request) {
+    public Long savePosts(@RequestBody PostsSaveRequestDTO dto, HttpServletRequest request) {
     	
     	HttpSession session = request.getSession();
     	String author = (String) session.getAttribute("user");

@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.moth.webservice.web.posts.dto.PostsMainResponseDto;
-import com.moth.webservice.web.posts.dto.PostsSaveRequestDto;
+import com.moth.webservice.web.posts.dto.PostsMainResponseDTO;
+import com.moth.webservice.web.posts.dto.PostsSaveRequestDTO;
 import com.moth.webservice.web.posts.repository.PostsRepository;
 
 import lombok.AllArgsConstructor;
@@ -19,23 +19,23 @@ public class PostsService {
 	private PostsRepository postsRepository;
 	
 	@Transactional
-	public Long save(PostsSaveRequestDto dto) {
+	public Long save(PostsSaveRequestDTO dto) {
 		return postsRepository.save(dto.toEntity()).getId();
 	}
 	
 	@Transactional(readOnly = true)
-	public List <PostsMainResponseDto> findAllDesc(){
-		return postsRepository.findAllDesc().map(PostsMainResponseDto::new).collect(Collectors.toList());
+	public List <PostsMainResponseDTO> findAllDesc(){
+		return postsRepository.findAllDesc().map(PostsMainResponseDTO::new).collect(Collectors.toList());
 	}
 	
 	//TODO:: Exception 만들자..!!
 	@Transactional(readOnly = true)
-	public PostsMainResponseDto findById(Long postId) {
-		return new PostsMainResponseDto(postsRepository.findById(postId).get());
+	public PostsMainResponseDTO findById(Long postId) {
+		return new PostsMainResponseDTO(postsRepository.findById(postId).get());
 	}
 	
 	@Transactional
-	public Long update (Long postId, PostsSaveRequestDto dto) {
+	public Long update (Long postId, PostsSaveRequestDTO dto) {
 		
 		postsRepository.findById(postId).ifPresent((entity ->{
 			entity.updatePostsEntity(dto);

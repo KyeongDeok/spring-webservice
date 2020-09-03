@@ -10,7 +10,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @NoArgsConstructor
-public class MemberRequestDto {
+public class MemberRequestDTO {
 
 	private String email;
 	private String password;
@@ -23,7 +23,7 @@ public class MemberRequestDto {
 	}
 	
 	@Builder
-	public MemberRequestDto(String email, String password) {
+	public MemberRequestDTO(String email, String password) {
 		this.email = email;
 		this.password = password;
 	}

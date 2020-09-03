@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.moth.webservice.web.common.domain.BaseTimeEntity;
-import com.moth.webservice.web.posts.dto.PostsSaveRequestDto;
+import com.moth.webservice.web.posts.dto.PostsSaveRequestDTO;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -33,7 +33,7 @@ public class PostsEntity extends BaseTimeEntity {
 	
 	private String author;
 	
-	public void updatePostsEntity(PostsSaveRequestDto dto) {
+	public void updatePostsEntity(PostsSaveRequestDTO dto) {
 		this.title = dto.getTitle();
 		this.content = dto.getContent();
 	}
