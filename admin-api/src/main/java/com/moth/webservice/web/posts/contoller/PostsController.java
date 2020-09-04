@@ -1,5 +1,6 @@
 package com.moth.webservice.web.posts.contoller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +13,10 @@ import com.moth.webservice.web.posts.service.PostsService;
 import lombok.AllArgsConstructor;
 
 @Controller
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PostsController {
 	
-	private PostsService postsService;
+	private final PostsService postsService;
 	
 	@GetMapping("/")
 	public String listPosts(Model model) {
